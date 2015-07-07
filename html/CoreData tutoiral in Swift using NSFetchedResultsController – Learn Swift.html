@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/ -->
+<html dir="ltr" lang="en-US" class="wf-notosans-i4-active wf-notosans-n7-active wf-notosans-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async="" type="text/javascript" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/ca-pub-5514861591674744.js"></script><script type="text/javascript" async="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/ga.js"></script><script src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/webfont.js"></script>
+<link rel="stylesheet" type="text/css" href="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/css.css" media="screen, projection">
+<title>CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift</title>
+<meta name="description" content="Let us see an example TaskManager app for CoreData written in Swift Programming language. This app provides the following functionality Allow users to ente">
+<meta name="robots" content="noodp, noydir">
+<link rel="canonical" href="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift.html">
+<link rel="alternate" type="application/rss+xml" title="Learn Swift feed" href="http://rshankar.com/feed/">
+<link rel="pingback" href="http://rshankar.com/xmlrpc.php">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700"><script>
+WebFont.load({
+	google: { families: ['Noto Sans:400,400italic,700'] },
+	timeout: 2000
+});
+</script>
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v2.1.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CoreData tutoiral in Swift using NSFetchedResultsController - Learn Swift">
+<meta property="og:description" content="Let us see an example TaskManager app for CoreData written in Swift Programming language. This app provides the following functionality Allow users to enter new task Update existing task delete task    You can download source code for this project from Github. If you are familiar with user interface then move on to the Core …">
+<meta property="og:url" content="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/">
+<meta property="og:site_name" content="Learn Swift">
+<meta property="article:tag" content="CoreData,delegation,NSFetchedResultContoller,Swift,Tutorials,UITableView,User Interface,Xcode">
+<meta property="article:section" content="Develop">
+<meta property="article:published_time" content="2014-07-14T17:23:49+00:00">
+<meta property="article:modified_time" content="2014-08-05T12:39:01+00:00">
+<meta property="og:updated_time" content="2014-08-05T12:39:01+00:00">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121029.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121030.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121032.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121037.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121059.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121101.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121103.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121104.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121108.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121110.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121116.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121138.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121540.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121125.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121127.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121557.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407130919.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407130920.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407130921.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407141329.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407130930.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407130933.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407130935.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121042.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121045.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121047.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121049.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121051.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121052.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121053.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121055.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407121056.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407141923.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407142004.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407142038.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407142059.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407142116.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407142127.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407142128.jpg">
+<meta property="og:image" content="http://rshankar.com/wp-content/uploads/2014/07/201407142233.jpg">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","url":"http:\/\/rshankar.com\/","name":"Learn Swift"}</script>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Learn Swift » CoreData tutoiral in Swift using NSFetchedResultsController Comments Feed" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/feed/">
+<link rel="stylesheet" id="spu-public-css-css" href="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/public.css" type="text/css" media="all">
+<script type="text/javascript" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/jquery.js"></script>
+<script type="text/javascript" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/jquery-migrate.min.js"></script>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<link rel="shortcut icon" href="http://rshankar.com/wp-content/themes/thesis/lib/images/favicon.ico">
+</head>
+<body class="template-single">
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-46820391-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<div class="container">
+	<div id="header">
+		<div id="site_title"><a href="http://rshankar.com/">Learn Swift</a></div>
+		<span class="menu_control">≡ Menu</span>
+<ul id="menu-about" class="nav"><li id="menu-item-19960" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19960"><a href="http://rshankar.com/ios-training/">Swift Training</a></li>
+<li id="menu-item-19560" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19560"><a href="http://rshankar.com/apps-2/">Apps</a></li>
+<li id="menu-item-19559" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19559"><a href="http://rshankar.com/about/">About</a></li>
+</ul>
+	</div>
+	<div class="columns">
+		<div class="content grt">
+			<article id="post-19732" class="post_box top" itemscope="" itemtype="http://schema.org/Article">
+				<header class="headline_area">
+					<h1 class="headline" itemprop="name">CoreData tutoiral in Swift using NSFetchedResultsController</h1>
+					<span class="post_author" itemprop="author">rshankar</span>
+					<meta itemprop="datePublished" content="2014-07-14">
+					<meta itemprop="dateModified" content="2014-08-05">
+					<span class="post_date" title="2014-07-14">July 14, 2014</span>
+				</header>
+				<div class="post_content" itemprop="articleBody">
+
+<!-- Quick Adsense WordPress Plugin: http://quicksense.net/ -->
+<div style="float:right;margin:10px 0 10px 10px;">
+<script async="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/adsbygoogle.js"></script>
+<script type="text/javascript">
+    var width = window.innerWidth || document.documentElement.clientWidth;
+if (width >= 800) {
+     document.write('<ins class="adsbygoogle"');
+     document.write('style="display:inline-block;width:300px;height:250px"');
+     document.write('data-ad-client="ca-pub-5514861591674744"');
+     document.write('data-ad-slot="5911202480"></ins>');
+ } else {
+    document.write('<ins class="adsbygoogle"');
+     document.write('style="display:block"');
+     document.write('data-ad-client="ca-pub-5514861591674744"');
+     document.write('data-ad-slot="3045305215"');
+     document.write('data-ad-format="auto"></ins>');
+ } 
+</script><ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-5514861591674744" data-ad-slot="5911202480" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<p>Let us see an example TaskManager app for <b>CoreData written in Swift Programming language</b>. This app provides the following functionality</p>
+<ul>
+<li>Allow users to enter new task</li>
+<li>Update existing task</li>
+<li>delete task</li>
+</ul>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121029.jpg" width="240" height="368" alt="TaskManager using CoreData">&nbsp;&nbsp;<img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121030.jpg" width="236" height="368" alt="201407121030.jpg"></p>
+<p>You can download source code for this project from <a href="https://github.com/rshankras/TaskManager.git">Github</a>. If you are familiar with user interface then move on to the <u style="font-weight: bold;">Core Data implementation in Swift</u> section</p>
+<p>Create a new File -&gt; New -&gt; Project and select template Single View Application</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121032.jpg" width="480" height="284" alt="201407121032.jpg"></p>
+<p>Enter Product Name, Language as Swift and select “<b>Use Core Data</b>” for the new Project.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121037.jpg" width="480" height="283" alt="201407121037.jpg"></p>
+<p><b><u>User Interface Implementation</u></b></p>
+<p><b>Add new TableViewController for managing tasks<br></b></p>
+<p>Delete ViewController.swift and Add new view controller which will be used for displaying the list of tasks.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121059.jpg" width="248" height="268" alt="201407121059.jpg"></p>
+<p>Right click on the Project and select New File</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121101.jpg" width="249" height="292" alt="201407121101.jpg"></p>
+<p>Choose the template as Cocoa Touch under iOS -&gt; Source</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121103.jpg" width="480" height="286" alt="201407121103.jpg"></p>
+<p>Enter name of the file as TaskManagerViewController with Subclass as UITableViewController and <b><u>Language as Swift</u></b>.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121104.jpg" width="480" height="283" alt="201407121104.jpg"></p>
+<p><b><u>Add new UITableViewController to the Storyboard.</u></b></p>
+<p>Navigate to Main.storyboard, delete the ViewController and add new TableViewController to the Storyboard</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121108.jpg" width="480" height="318" alt="201407121108.jpg"></p>
+<p>Embed this TableViewController inside a navigation controller. You can do this by clicking <u>Editor menu -&gt; Embed In -&gt; Navigation Controller</u>.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121110.jpg" width="349" height="309" alt="201407121110.jpg"></p>
+<p>Navigate to Storyboard file and select Table View Controller. Click Identity Inspector and set the Class to the TaskManagerViewController.</p>
+<p><b><u>Add button to the navigation bar.</u></b></p>
+<p>Users can navigate to new task screen by tapping the button on the TaskManager. Drag and drop the button bar item to the navigation bar.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121116.jpg" width="480" height="144" alt="201407121116.jpg"></p>
+<p>In the attributes inspector, set the identifier for button bar item as Add. Also enter title as “Task Manager” in the navigation bar.</p>
+<p><b><u>Add View Controller for entering task detail.</u></b></p>
+<p>Now to enter task detail, let us add new View Controller. From the Objects library, drag and drop View Controller on to storyboard. Then drag and drop a navigation item to this View Controller. Add a Done bar button item for saving the changes, Cancel bar button item for dismissing the screen. Also provide a title for the screen as Task Detail.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121138.jpg" width="480" height="259" alt="201407121138.jpg"></p>
+<p>Then add a textfield to the View Controller to enter details about the task.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121540.jpg" width="462" height="214" alt="201407121540.jpg"></p>
+<p>Now to connect the Task Manager screen to Task Detail screen, select the Add button in Task Manager screen, hold the control button and make a connection to the Task Detail screen. Select type of <b><u>Action Segue as Show</u></b>.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121125.jpg" width="391" height="431" alt="201407121125.jpg"></p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121127.jpg" width="224" height="175" alt="201407121127.jpg"></p>
+<p>Select each View Controller and Click on the <b><u>Resolve Auto Layout</u></b> Issues option and pick <b><u>Reset to Suggested Constraints</u></b>. This would ensure that the controls alignment and display remains same in different screen sizes.</p>
+<p>
+<img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121557.jpg" width="354" height="210" alt="201407121557.jpg"></p>
+<p><b><u>Add View Controller Class</u></b></p>
+<p>Right click on the Project, select New File from menu list.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407130919.jpg" width="269" height="285" alt="201407130919.jpg"></p>
+<p>Select Cocoa Touch Class as template.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407130920.jpg" width="480" height="286" alt="201407130920.jpg"></p>
+<p>Enter the Class name as TaskDetailViewController, Subclass of UIViewController and Language as Swift.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407130921.jpg" width="480" height="281" alt="201407130921.jpg"></p>
+<p>Navigate to Storyboard file and select Task Detail View Controller. Click Identity Inspector and set the Class to the TaskDetailViiewController.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407141329.jpg" width="196" height="239" alt="201407141329.jpg"></p>
+<p>Now let us add the function required for dismissing the View Controller. This gets called when user taps done and cancel buttons. Navigate to TaskDetailViewController.swift file and add the following functions.</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">@IBAction</span> <span style="color: #bb2ca2">func</span> done(sender: <span style="color: #703daa">AnyObject</span>) {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #31595D;"><code>dismissViewController<span style="color: #000000">()</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;"><code>&nbsp;&nbsp;</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">@IBAction</span> <span style="color: #bb2ca2">func</span> cancel(sender: <span style="color: #703daa">AnyObject</span>) {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #31595D;"><code><span style="color: #000000">&nbsp;&nbsp;</span> dismissViewController<span style="color: #000000">()</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;"><code>&nbsp;&nbsp;</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">func</span> dismissViewController() {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #3D1D81;"><code><span style="color: #703daa">navigationController</span><span style="color: #000000">.</span>popViewControllerAnimated<span style="color: #000000">(</span><span style="color: #703daa">true</span><span style="color: #000000">)</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"></p>
+<p style="margin: 0px;">Connect the IBActions with the corresponding done and cancel buttons</p>
+<p style="margin: 0px;">
+<img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407130930.jpg" width="480" height="88" alt="201407130930.jpg"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Try to compile and run the app on the Simulator. You should see the following Task Manager screen and tapping + sign should display the Task Detail screen with TextField, Cancel and Done button.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407130933.jpg" width="204" height="314" alt="201407130933.jpg"> <img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407130935.jpg" width="204" height="315" alt="201407130935.jpg"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">When you tap the Cancel or Done button should take you to the Task Manager screen.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><b><u>Create IBOutlet element for UITextField Element</u></b></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Add the following piece of code after the Class TaskDetailViewController: UIViewController</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">@IBOutlet</span> <span style="color: #bb2ca2">var</span> txtDesc: <span style="color: #703daa">UITextField</span></code></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Now use the connection inspector to connect the IBOutlet variable to the textfield on the User Interface.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><b><u>Core Data Implementation</u></b></p>
+<p>Click Show Project Navigator and select CoreData model file (ending with extension .xcdatamodelid)</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121042.jpg" width="453" height="281" alt="201407121042.jpg"></p>
+<p>Click Add Entity option available at the bottom of Xcode Editor window.</p>
+<p>
+<img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121045.jpg" width="181" height="117" alt="201407121045.jpg"></p>
+<p>Then enter the name of the entity as Tasks.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121047.jpg" width="370" height="134" alt="201407121047.jpg"></p>
+<p>Click Add Attribute then enter name as desc and choose the type as String. This attribute will be used for storing the task detail information.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121049.jpg" width="312" height="236" alt="201407121049.jpg"></p>
+<p>Now to generate the CoreData mapping class, click Editor and select <b><u>Create NSManagedObject Subclass</u></b>.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121051.jpg" width="240" height="211" alt="201407121051.jpg"></p>
+<p style="margin: 0px;">Select the data models and click Next</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121052.jpg" width="480" height="284" alt="201407121052.jpg"></p>
+<p>Then select entities and in this example it is Tasks</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121053.jpg" width="480" height="287" alt="201407121053.jpg"></p>
+<p>Make sure to select <b><u>Language for NSManagedObject class as Swift</u></b>. Click Create to the create new class.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121055.jpg" width="480" height="392" alt="201407121055.jpg"></p>
+<p>Click Yes to to configure an Objective-C birding header for the Swift class.</p>
+<p><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407121056.jpg" width="378" height="151" alt="201407121056.jpg"></p>
+<p>This should create a new class called Tasks.swfit with variable for corresponding attribute defined in Entities</p>
+<p><b><u>Write code to save new task details.</u></b></p>
+<p>Add the following line at the top of TaskDetailViewController class</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">let</span> managedObjectContext =</code> (<span style="color: #703DAA;">UIApplication</span>.<span style="color: #3D1D81;">sharedApplication</span>().<span style="color: #703DAA;">delegate</span> <span style="color: #BB2CA2;">as</span> <span style="color: #4F8187;">AppDelegate</span>)<span style="font-family: monospace;">.</span><span style="font-family: monospace; color: #4F8187;">managedObjectContext</span></p>
+<p>The above line defines a variable to store the ManagedObjectContext. In order to save the task information entered in the UITextField, add the following code to TaskDetailViewController.swift. Then call this function in the @IBAction done.</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">func</span> createTask() {</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">let</span> entityDescripition = <span style="color: #703daa">NSEntityDescription</span>.<span style="color: #3d1d81">entityForName</span>(<span style="color: #d12f1b">“Tasks”</span>, inManagedObjectContext: <span style="color: #4f8187">managedObjectContext</span>)</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">let</span> task = <span style="color: #4f8187">Tasks</span>(entity: entityDescripition, insertIntoManagedObjectContext: <span style="color: #4f8187">managedObjectContext</span>)</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">task.<span style="color: #4f8187">desc</span> = <span style="color: #4f8187">txtDesc</span>.<span style="color: #703daa">text</span></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #4F8187;"><code>managedObjectContext?<span style="color: #000000">.</span><span style="color: #3d1d81">save</span><span style="color: #000000">(</span><span style="color: #bb2ca2">nil</span><span style="color: #000000">)</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">@IBAction</span> <span style="color: #bb2ca2">func</span> done(sender: <span style="color: #703daa">AnyObject</span>) {</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #31595d">createTask</span>()</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #31595D;">dismissViewController<span style="color: #000000">()</span></p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">The createTask function uses the Tasks Entity class and ManagedObjectContext class to save the information entered in the text field in to SQLite using CoreData.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Now if you try to run this app in Xcode simulator, you should be able to enter the details in textfield and save the task. But there is no way to see the saved tasks.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><b><u>Write code to retrieve information from SQLite using NSFetchedResultsController</u></b></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">We will be using <a href="https://developer.apple.com/library/prerelease/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instm/NSFetchedResultsController/objectAtIndexPath:">NSFetchedResultsController</a> to retrieve and manage information returned from Core Data. Write the following code after the class declaration of TaskManagerViewController class</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><code><span style="font-family: monospace; font-size: 11px; color: #BB2CA2;">let</span> <span style="font-family: monospace; font-size: 11px;">managedObjectContext =</span></code> <span style="font-family: Menlo; font-size: 11px;">(</span><span style="color: #703DAA; font-family: Menlo; font-size: 11px;">UIApplication</span><span style="font-family: Menlo; font-size: 11px;">.</span><span style="font-family: Menlo; font-size: 11px; color: #3D1D81;">sharedApplication</span><span style="font-family: Menlo; font-size: 11px;">().</span><span style="color: #703DAA; font-family: Menlo; font-size: 11px;">delegate</span> <span style="font-family: Menlo; font-size: 11px; color: #BB2CA2;">as</span> <span style="font-family: Menlo; font-size: 11px; color: #4F8187;">AppDelegate</span><span style="font-family: Menlo; font-size: 11px;">)</span><span style="font-family: monospace; font-size: 11px;">.</span><span style="font-family: monospace; font-size: 11px; color: #4F8187;">managedObjectContext</span></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #703DAA;"><code><span style="color: #bb2ca2">var</span> <span style="color: #000000">fetchedResultController:</span> NSFetchedResultsController <span style="color: #000000">=</span> NSFetchedResultsController<span style="color: #000000">()</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #703DAA;"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407141923.jpg" width="596" height="101" alt="201407141923.jpg"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">You might see the above error message “Use of undeclared type ’NSFetchedResultsContoller”. This can be fixed by importing CoreData module and making your class a delegate of NSFetchedResultsControllerDelegate.</p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">import</span> CoreData</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;"><code><br></code></p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #703DAA;"><code><span style="color: #bb2ca2">class</span> <span style="color: #000000">TaskManagerViewController:</span> UITableViewController<span style="color: #000000">,</span> NSFetchedResultsControllerDelegate <span style="color: #000000">{</span></code></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Then add the following function to populate fetchedResultController.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">func</span> getFetchedResultController() -&gt; <span style="color: #703daa">NSFetchedResultsController</span> {</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #4f8187">fetchedResultController</span> = <span style="color: #703daa">NSFetchedResultsController</span>(fetchRequest: <span style="color: #31595d">taskFetchRequest</span>(), managedObjectContext: <span style="color: #4f8187">managedObjectContext</span>, sectionNameKeyPath: <span style="color: #bb2ca2">nil</span>, cacheName: <span style="color: #bb2ca2">nil</span>)</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #4F8187;"><span style="color: #bb2ca2">return</span> fetchedResultController</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">}</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;">&nbsp;&nbsp;</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">func</span> taskFetchRequest() -&gt; <span style="color: #703daa">NSFetchRequest</span> {</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">let</span> fetchRequest = <span style="color: #703daa">NSFetchRequest</span>(entityName: <span style="color: #d12f1b">“Tasks”</span>)</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">let</span> sortDescriptor = <span style="color: #703daa">NSSortDescriptor</span>(key: <span style="color: #d12f1b">“desc”</span>, ascending: <span style="color: #703daa">true</span>)</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">fetchRequest.<span style="color: #703daa">sortDescriptors</span> = [sortDescriptor]</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">return</span> fetchRequest</p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;">}</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Update the ViewDidLoad method of TableViewController to populate fetchedResultController variable and set the delegate to self and call the function to retrieve the results.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>&nbsp;&nbsp;<span style="color: #bb2ca2">override</span> <span style="color: #bb2ca2">func</span> viewDidLoad() {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">super</span>.<span style="color: #3d1d81">viewDidLoad</span>()</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;"><code><br></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #31595D;"><code><code><span style="color: #4f8187">fetchedResultController</span> <span style="color: #000000">=</span> getFetchedResultController<span style="color: #000000">()</span></code></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #4F8187;">fetchedResultController<span style="color: #000000">.</span><span style="color: #703daa">delegate</span> <span style="color: #000000">=</span> <span style="color: #bb2ca2">self</span></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #4F8187;"><code>fetchedResultController<span style="color: #000000">.</span><span style="color: #3d1d81">performFetch</span><span style="color: #000000">(</span><span style="color: #bb2ca2">nil</span><span style="color: #000000">)</span></code></p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><span style="font-family: Helvetica;"><b><u>Implement the TableView related functions to display the data</u></b></span><br></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><font face="Helvetica">Navigate to Main.storyoard then to TaskManagerViewController and set Identifier for Prototype Cells as “Cell"</font></code></p>
+<p style="margin: 0px;">
+<img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407142004.jpg" width="480" height="149" alt="201407142004.jpg"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Add the following functions required for population of rows in tableView and to refresh the tableView when content is changed.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">override</span> <span style="color: #bb2ca2">func</span> numberOfSectionsInTableView(tableView: <span style="color: #703daa">UITableView</span>!) -&gt; <span style="color: #703daa">Int</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #4F8187;"><code><span style="color: #bb2ca2">return</span> fetchedResultController<span style="color: #000000">.</span><span style="color: #703daa">sections</span><span style="color: #000000">.</span><span style="color: #703daa">count</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;"><code>&nbsp;&nbsp;</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">override</span> <span style="color: #bb2ca2">func</span> tableView(tableView: <span style="color: #703daa">UITableView</span>!, numberOfRowsInSection section: <span style="color: #703daa">Int</span>) -&gt; <span style="color: #703daa">Int</span> {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">return</span> <span style="color: #4f8187">fetchedResultController</span>.<span style="color: #703daa">sections</span>[section].numberOfObjects</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;"><code>&nbsp;&nbsp;</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">override</span> <span style="color: #bb2ca2">func</span> tableView(tableView: <span style="color: #703daa">UITableView</span>!, cellForRowAtIndexPath indexPath: <span style="color: #703daa">NSIndexPath</span>!) -&gt; <span style="color: #703daa">UITableViewCell</span>? {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">var</span> cell = tableView.<span style="color: #3d1d81">dequeueReusableCellWithIdentifier</span>(<span style="color: #d12f1b">"Cell"</span>, forIndexPath: indexPath) <span style="color: #bb2ca2">as</span> <span style="color: #703daa">UITableViewCell</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">let</span> task = <span style="color: #4f8187">fetchedResultController</span>.<span style="color: #3d1d81">objectAtIndexPath</span>(indexPath) <span style="color: #bb2ca2">as</span> <span style="color: #4f8187">Tasks</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>cell.<span style="color: #703daa">textLabel</span>.<span style="color: #703daa">text</span> = task.<span style="color: #4f8187">desc</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">return</span> cell</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><br></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">func</span> controllerDidChangeContent(controller: <span style="color: #703daa">NSFetchedResultsController</span>!) {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><font color="#BB2CA2">t</font><span style="color: #703daa">ableView</span>.<span style="color: #3d1d81">reloadData</span>()</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;"><code>&nbsp;&nbsp;</code></p>
+<p style="margin: 0px;"><code><font face="Helvetica">Swift uses namespaces for classes, so the downcast of NSManagedObject class to Tasks class will work only when you append the module name with the class for Entity</font></code></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><code><span style="font-family: Menlo; font-size: 11px; color: #BB2CA2;">let</span> <span style="font-family: Menlo; font-size: 11px;">task =</span> <span style="font-family: Menlo; font-size: 11px; color: #4F8187;">fetchedResultController</span><span style="font-family: Menlo; font-size: 11px;">.</span><span style="font-family: Menlo; font-size: 11px; color: #3D1D81;">objectAtIndexPath</span><span style="font-family: Menlo; font-size: 11px;">(indexPath)</span> <span style="font-family: Menlo; font-size: 11px; color: #BB2CA2;">as</span> <span style="font-family: Menlo; font-size: 11px; color: #4F8187;">Tasks</span><br></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><span style="font-family: Helvetica;">Navigate to</span> <font face="Helvetica">TaskManager.xcdatamodeld, select Tasks under Entities and using the Data Model Inspector append Module name i.e TaskManager with the class.</font><br></code></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><code><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407142038.jpg" width="261" height="240" alt="201407142038.jpg"></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;">Now you should be able to see the data added via TaskDetailScreen in the TaskManager Screen.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407142059.jpg" width="237" height="373" alt="201407142059.jpg"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><b><u>Implementation of deleting rows from tableView and CoreData entity</u></b></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Copy and paste the following code to provide the users with the option to delete the rows.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">override</span> <span style="color: #bb2ca2">func</span> tableView(tableView: <span style="color: #703daa">UITableView</span>!, commitEditingStyle editingStyle: <span style="color: #703daa">UITableViewCellEditingStyle</span>, forRowAtIndexPath indexPath: <span style="color: #703daa">NSIndexPath</span>!) {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">let</span> managedObject:<span style="color: #703daa">NSManagedObject</span> = <span style="color: #4f8187">fetchedResultController</span>.<span style="color: #3d1d81">objectAtIndexPath</span>(indexPath) <span style="color: #bb2ca2">as</span> <span style="color: #703daa">NSManagedObject</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #4f8187">managedObjectContext?</span>.<span style="color: #3d1d81">deleteObject</span>(managedObject)</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #4F8187;"><code>managedObjectContext?<span style="color: #000000">.</span><span style="color: #3d1d81">save</span><span style="color: #000000">(</span><span style="color: #bb2ca2">nil</span><span style="color: #000000">)</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">}</p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;">&nbsp;&nbsp;</p>
+<p style="margin: 0px;"><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407142116.jpg" width="250" height="394" alt="201407142116.jpg"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><b><u>Implementation of editing task details</u></b></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Now let us see how to edit a task in the TaskManager screen. We will re-use the same TaskDetail screen for editing the task information. First let create segue from UITableViewCell to TaskDetailViewController. You can do this by holding the Control key and drag and drop the connection to TaskDetailViewController.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">
+<img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407142127.jpg" width="428" height="206" alt="201407142127.jpg"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Make sure to set the Segue identifier as edit using Attributes Inspector</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407142128.jpg" width="264" height="127" alt="201407142128.jpg"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Add the following piece of code in TaskManagerViewController to populate the task detail for the edited row.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>&nbsp;&nbsp;<span style="color: #bb2ca2">override</span> <span style="color: #bb2ca2">func</span> prepareForSegue(segue: <span style="color: #703daa">UIStoryboardSegue</span>!, sender: <span style="color: #703daa">AnyObject</span>!) {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">if</span> segue.<span style="color: #703daa">identifier</span> == <span style="color: #d12f1b">"edit"</span> {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">let</span> cell = sender <span style="color: #bb2ca2">as</span> <span style="color: #703daa">UITableViewCell</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">let</span> indexPath = <span style="color: #703daa">tableView</span>.<span style="color: #3d1d81">indexPathForCell</span>(cell)</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #4F8187;"><code><span style="color: #bb2ca2">let</span> <span style="color: #000000">taskController:</span>TaskDetailViewController <span style="color: #000000">= segue.</span><span style="color: #703daa">destinationViewController</span> <span style="color: #bb2ca2">as</span> TaskDetailViewController</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">let</span> task:<span style="color: #4f8187">Tasks</span> = <span style="color: #4f8187">fetchedResultController</span>.<span style="color: #3d1d81">objectAtIndexPath</span>(indexPath) <span style="color: #bb2ca2">as</span> <span style="color: #4f8187">Tasks</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>taskController.task = task</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Navigate to TaskDetailViewController and variable which used to pass the task details across the ViewControllers</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><code><span style="font-family: Menlo; font-size: 11px; color: #BB2CA2;">var</span> <span style="font-family: Menlo; font-size: 11px;">task:</span> <span style="font-family: Menlo; font-size: 11px; color: #4F8187;">Task</span><span style="font-family: Menlo; font-size: 11px;">? =</span> <span style="font-family: Menlo; font-size: 11px; color: #BB2CA2;">nil</span><br></code></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">In viewDidLoad fund, populate the textField with the task details for edit operation i.e task is not nil</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><span style="font-family: Menlo; font-size: 11px; color: #BB2CA2;">override</span> <span style="font-family: Menlo; font-size: 11px; color: #BB2CA2;">func</span> <span style="font-family: Menlo; font-size: 11px;">viewDidLoad() {</span></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">super</span>.<span style="color: #3d1d81">viewDidLoad</span>()</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">if</span> <span style="color: #4f8187">task</span> != <span style="color: #bb2ca2">nil</span> {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #4f8187">txtDesc</span>.<span style="color: #703daa">text</span> =</code> <span style="color: #4F8187;">task</span>?.<span style="color: #4F8187;">desc</span></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;">Then add a new function to save the edited task. Also modify the done function to handle create and edit task functionality</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">func</span> editTask() {</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #4F8187;">task<span style="color: #000000">?.</span>desc <span style="color: #000000">=</span> txtDesc<span style="color: #000000">.</span><span style="color: #703daa">text</span></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #4F8187;">managedObjectContext<span style="color: #000000">.</span><span style="color: #3d1d81">save</span><span style="color: #000000">(</span><span style="color: #bb2ca2">nil</span><span style="color: #000000">)</span></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;">}</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">@IBAction</span> <span style="color: #bb2ca2">func</span> done(sender: <span style="color: #703daa">AnyObject</span>) {</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #bb2ca2">if</span> <span style="color: #4f8187">task</span> != <span style="color: #bb2ca2">nil</span> {</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #31595d">editTask</span>()</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">} <span style="color: #bb2ca2">else</span> {</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #31595d">createTask</span>()</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">}</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><span style="color: #31595D;">dismissViewController</span>()</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;">}</p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"></p>
+<p style="margin: 0px;"><code><font face="Helvetica">Now when you run the app in Xcode simulator, you should be able to edit the task.</font><br></code></p>
+<p style="margin: 0px;"><code><font face="Helvetica"><br></font></code></p>
+<p style="margin: 0px;"><code><font face="Helvetica">The final piece of code left is to add background colour to the navigation bar for both the controllers. Click AppDelegate.swift file and add the following function. Then call this function from the didFinishLaunchingWithOptions.</font></code></p>
+<p style="margin: 0px;"><code><font face="Helvetica"><br></font></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">func</span> setupAppearance() {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>&nbsp;&nbsp; <span style="color: #bb2ca2">var</span> navigationBarAppearance = <span style="color: #703daa">UINavigationBar</span>.<span style="color: #3d1d81">appearance</span>()</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>&nbsp;&nbsp; navigationBarAppearance.<span style="color: #703daa">barTintColor</span> = <span style="color: #703daa">UIColor</span>(red: <span style="color: #272ad8">51.0</span>/<span style="color: #272ad8">255.0</span>, green: <span style="color: #272ad8">104.0</span>/<span style="color: #272ad8">255.0</span>, blue: <span style="color: #272ad8">121.0</span>/<span style="color: #272ad8">255.0</span>, alpha: <span style="color: #272ad8">1.0</span>)</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>navigationBarAppearance.<span style="color: #703daa">tintColor</span> = <span style="color: #703daa">UIColor</span>.<span style="color: #3d1d81">whiteColor</span>()</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #703DAA;"><code><span style="color: #000000">navigationBarAppearance.</span>titleTextAttributes <span style="color: #000000">= [</span>NSForegroundColorAttributeName<span style="color: #000000">:</span>UIColor<span style="color: #000000">.</span><span style="color: #3d1d81">whiteColor</span><span style="color: #000000">()]</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; min-height: 13px;"><code>&nbsp;&nbsp;</code></p>
+<p style="margin: 0px;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><br></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>&nbsp;&nbsp;<span style="color: #bb2ca2">func</span> application(application: <span style="color: #703daa">UIApplication</span>!, didFinishLaunchingWithOptions launchOptions: <span style="color: #703daa">NSDictionary</span>!) -&gt; <span style="color: #703daa">Bool</span> {</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #008400;"><code>// Override point for customization after application launch.</code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo; color: #31595D;"><code>setupAppearance<span style="color: #000000">()</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code><span style="color: #bb2ca2">return</span> <span style="color: #703daa">true</span></code></p>
+<p style="margin: 0px; font-size: 11px; font-family: Menlo;">
+</p><p style="margin: 0px; font-size: 11px; font-family: Menlo;"><code>}</code></p>
+<p style="margin: 0px;"><code><font face="Helvetica"><br></font></code></p>
+<p style="margin: 0px;">Running the app on the iOS simulator should change the appearance for the navigation bar.</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/201407142233.jpg" width="239" height="383" alt="201407142233.jpg"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Hope you found this beginner tutorial useful. Please use the comments section to share your thoughts and suggestion</p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;">Download the source code for this tutorial from <a href="https://github.com/rshankras/TaskManager.git">Github</a></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><code><br></code></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+<p style="margin: 0px;"><code><br></code></p>
+
+<!-- Quick Adsense WordPress Plugin: http://quicksense.net/ -->
+<div style="float:none;margin:10px 0 10px 0;text-align:center;">
+<script type="text/javascript">
+    google_ad_client = "ca-pub-5514861591674744";
+    google_ad_slot = "5972213675";
+    google_ad_width = 300;
+    google_ad_height = 250;
+</script>
+<!-- Below Post - New -->
+<script type="text/javascript" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both"></div>				</div>
+			</article>
+			<section id="comments">
+				<p class="comments_intro"><span class="num_comments">32</span> comments… <a href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#commentform" rel="nofollow">add one</a></p>
+				<ul class="comment_list">
+					<li class="comment even thread-even depth-1" id="comment-66">
+						<div class="comment_head">
+							<span class="comment_author">Chris</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-66" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=66#commentform" onclick="return addComment.moveForm( &quot;comment-body-66&quot;, &quot;66&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Chris"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/7267e39befa447b3b839167a435055db" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-66"><p>I love this tutorial! Thanks for posting. </p>
+<p>When trying to retrieve my list of stored tasks, the app crashes while running :</p>
+<p>let task = fetchedResultController.objectAtIndexPath(indexPath) as Tasks and shows “Swift dynamic cast failed” in one of the threads. Any idea what might cause this? It started when I added the prototype cell into the mix, although I have assigned  “Cell” as the identifier, like in the tutorial.</p>
+						</div>
+<ul class="children">
+					<li class="comment byuser comment-author-rshankar bypostauthor odd alt depth-2" id="comment-71">
+						<div class="comment_head">
+							<span class="comment_author">rshankar</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-71" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=71#commentform" onclick="return addComment.moveForm( &quot;comment-body-71&quot;, &quot;71&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to rshankar"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/0ef0168334375ad05552447095305b83" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-71"><p>Please make changes to entity class name then try again.</p>
+<p>Swift uses namespaces for classes, so the downcast of NSManagedObject class to Tasks class will work only when you append the module name with the class for Entity<br>
+let task = fetchedResultController.objectAtIndexPath(indexPath) as Tasks</p>
+<p>Navigate to TaskManager.xcdatamodeld, select Tasks under Entities and using the Data Model Inspector append Module name i.e TaskManager with the class.</p>
+						</div>
+</li><!-- #comment-## -->
+</ul>
+</li><!-- #comment-## -->
+					<li class="comment even thread-odd thread-alt depth-1" id="comment-102">
+						<div class="comment_head">
+							<span class="comment_author">Bin</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-102" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=102#commentform" onclick="return addComment.moveForm( &quot;comment-body-102&quot;, &quot;102&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Bin"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/3325eab6a33688b614b97ef1d0fa36ef" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-102"><p>Hi,you!<br>
+Thanks for posting!</p>
+<p>I did as your tutorial above, but do not understand why I get some errors:<br>
+“Using TaskDetailViewController.swift underclared type ‘Tasks'”<br>
+“Using underclared type ‘task’ TaskDetailViewController.swift”<br>
+“Using unresolved identifier ‘NSEntityDescription’ TaskDetailViewController.swift”<br>
+“Using TaskManagerViewController.swift underclared type ‘Tasks'”<br>
+And there are two files in the file TaskManager: Tasks.h and Tasks.m, I found a bit strange compared to the performance of your project.<br>
+I started learning about the swift, nor as desirable CoreData. I hope you can help me.Thanks!</p>
+						</div>
+<ul class="children">
+					<li class="comment byuser comment-author-rshankar bypostauthor odd alt depth-2" id="comment-104">
+						<div class="comment_head">
+							<span class="comment_author">rshankar</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-104" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=104#commentform" onclick="return addComment.moveForm( &quot;comment-body-104&quot;, &quot;104&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to rshankar"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/0ef0168334375ad05552447095305b83" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-104"><p>Can you please check whether “import CoreData” added to Task TaskManagerViewController.swift file?</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even depth-2" id="comment-107">
+						<div class="comment_head">
+							<span class="comment_author">Neil</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-107" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=107#commentform" onclick="return addComment.moveForm( &quot;comment-body-107&quot;, &quot;107&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Neil"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/a6f0f26d4a3af84f6ba9e2c049eb46d0" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-107"><p>You have .m and .h files instead of .swift file for Tasks. When you created your Tasks file (subclass of NSManagedObject) you did not change ‘language’ from Obj-C to Swift.</p>
+						</div>
+</li><!-- #comment-## -->
+</ul>
+</li><!-- #comment-## -->
+					<li class="comment byuser comment-author-rshankar bypostauthor odd alt thread-even depth-1" id="comment-108">
+						<div class="comment_head">
+							<span class="comment_author">rshankar</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-108" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=108#commentform" onclick="return addComment.moveForm( &quot;comment-body-108&quot;, &quot;108&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to rshankar"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/0ef0168334375ad05552447095305b83" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-108"><p>Thanks Niel</p>
+<p>Bin, can you please check as suggested by Neil.</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-odd thread-alt depth-1" id="comment-109">
+						<div class="comment_head">
+							<span class="comment_author">Neil</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-109" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=109#commentform" onclick="return addComment.moveForm( &quot;comment-body-109&quot;, &quot;109&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Neil"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/4e5effb9f15896215a0f196d2f47d928" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-109"><p>Hi</p>
+<p>Just working through your tutorial – just what I need for my own project, so many thanks.</p>
+<p>I noticed on the line:<br>
+let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate)<br>
+that .managedObjectContext is missing from the end. Your source code is correct but it is missing from the webpage.<br>
+Thanks again.</p>
+						</div>
+<ul class="children">
+					<li class="comment byuser comment-author-rshankar bypostauthor odd alt depth-2" id="comment-111">
+						<div class="comment_head">
+							<span class="comment_author">rshankar</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-111" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=111#commentform" onclick="return addComment.moveForm( &quot;comment-body-111&quot;, &quot;111&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to rshankar"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/0ef0168334375ad05552447095305b83" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-111"><p>Thank you, the webpage is updated now.</p>
+						</div>
+</li><!-- #comment-## -->
+</ul>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-112">
+						<div class="comment_head">
+							<span class="comment_author">Neil</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-112" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=112#commentform" onclick="return addComment.moveForm( &quot;comment-body-112&quot;, &quot;112&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Neil"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/4e5effb9f15896215a0f196d2f47d928" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-112"><p>Just finished and I really am so thankful that you took the time to write this. I’ve been pulling my hair out for a few days with Core Data and Swift. Your advice about appending the module name with the class was excellent.<br>
+Just a few more typos. Hope you don’t think I’m being picky.</p>
+<p>In ‘Implementation of editing task details’ section:<br>
+let task: Task? = nil should be let task: Tasks? = nil</p>
+<p>edit segue has identifier = ‘edit’ but the create segue needs to have identifier = ‘create’ or some other name to prevent segue.identifier returning nil when ‘+’ is clicked. I could not find this step on the webpage but I have had some wine so maybe I missed it <img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/icon_smile.gif" alt=":)" class="wp-smiley"> Apologies if so.</p>
+<p>In beta 4, in AppDelegate, managedObjectContext is defined as:<br>
+lazy var managedObjectContext: NSManagedObjectContext?<br>
+with the ?. So I have had to add a ! to the ‘as AppDelegate).managedObjectContext!’ in the two view controllers.</p>
+						</div>
+<ul class="children">
+					<li class="comment byuser comment-author-rshankar bypostauthor odd alt depth-2" id="comment-113">
+						<div class="comment_head">
+							<span class="comment_author">rshankar</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-113" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=113#commentform" onclick="return addComment.moveForm( &quot;comment-body-113&quot;, &quot;113&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to rshankar"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/0ef0168334375ad05552447095305b83" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-113"><p>Thanks Neil for your feedback. Much appreciated!</p>
+						</div>
+</li><!-- #comment-## -->
+</ul>
+</li><!-- #comment-## -->
+					<li class="comment even thread-odd thread-alt depth-1" id="comment-120">
+						<div class="comment_head">
+							<span class="comment_author">Geoff</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-120" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=120#commentform" onclick="return addComment.moveForm( &quot;comment-body-120&quot;, &quot;120&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Geoff"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/f9808fc9934c92ae3981bfe59a9745f7" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-120"><p>This is a great tutorial but I’m stuck on the part about appending the module name with the class.</p>
+<p>When I put in “TaskManager.Task” into the Entity Class field and create the subclass it generates a file titled “TaskManager.swift” and I can’t use the Task subclass. Do you have to generate the subclasses and then go back and add the module name afterwards? That doesn’t seem right…can you help me understand what I’m missing here?</p>
+<p>Thanks!</p>
+						</div>
+<ul class="children">
+					<li class="comment byuser comment-author-rshankar bypostauthor odd alt depth-2" id="comment-121">
+						<div class="comment_head">
+							<span class="comment_author">rshankar</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-121" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=121#commentform" onclick="return addComment.moveForm( &quot;comment-body-121&quot;, &quot;121&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to rshankar"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/0ef0168334375ad05552447095305b83" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-121"><p>Please generate the class then append the module name to the Entity Class field.</p>
+						</div>
+</li><!-- #comment-## -->
+</ul>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-230">
+						<div class="comment_head">
+							<span class="comment_author">Mick Smith</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-230" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=230#commentform" onclick="return addComment.moveForm( &quot;comment-body-230&quot;, &quot;230&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Mick Smith"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/8f9efcf81d135a6651dfd78b173cbcd0" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-230"><p>Great tutorial, best way I’ve seen in any tutorials of fetching from core data, far better than what I was using.<br>
+It’s been a great help to me.<br>
+Thanks</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-240">
+						<div class="comment_head">
+							<span class="comment_author">John cooper</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-240" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=240#commentform" onclick="return addComment.moveForm( &quot;comment-body-240&quot;, &quot;240&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to John cooper"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/dafbd28472b152cd31dd6dc93671cb4d" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-240"><p>Hi instead of the data populating a table View can you set it to populate into a label on a button  and when the button is pressed all the info is displayed ?<br>
+Using your example the button would read ” buy vegetables ” ( populated from the users input) and when the button is pressed it would display more info like buy carrots and  cabbage. </p>
+<p>Hope this makes sense.<br>
+I just want to make a better look app then just table views.<br>
+Will improve the user experience better design.<br>
+The app I have in mind would suite it perfect better then a boring table view.</p>
+<p>I have made up some example diagrams to explain better but can’t post it here.</p>
+<p>Thank for taking the time to read this .</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-326">
+						<div class="comment_head">
+							<span class="comment_author">Anita</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-326" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=326#commentform" onclick="return addComment.moveForm( &quot;comment-body-326&quot;, &quot;326&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Anita"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/69e155a9882664e411edea2ba139e246" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-326"><p>First of all, thanks for the tutorial.</p>
+<p>There were however some parts that got me struggling: there are some differences in the code here and in the final code you can download from github, mostly about missing ? and ! marks, and some typo’s (sometimes you use Tasks and sometimes Task as the entity name/class). However, with your final code, you can figure things out <img src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+<p>So, thanks!</p>
+						</div>
+<ul class="children">
+					<li class="comment byuser comment-author-rshankar bypostauthor odd alt depth-2" id="comment-328">
+						<div class="comment_head">
+							<span class="comment_author">rshankar</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-328" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=328#commentform" onclick="return addComment.moveForm( &quot;comment-body-328&quot;, &quot;328&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to rshankar"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/19de570461532ae0f1b11359efd5403e" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-328"><p>Thanks for your feedback. Will update the content soon.</p>
+						</div>
+</li><!-- #comment-## -->
+</ul>
+</li><!-- #comment-## -->
+					<li class="comment even thread-odd thread-alt depth-1" id="comment-431">
+						<div class="comment_head">
+							<span class="comment_author">Andrew Brotherton</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-431" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=431#commentform" onclick="return addComment.moveForm( &quot;comment-body-431&quot;, &quot;431&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Andrew Brotherton"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/b748d44b30ae1219f0b1a45d5d4f90cf" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-431"><p>Getting a UINavigationController does not have a member named popViewController error after copying that over.</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-even depth-1" id="comment-448">
+						<div class="comment_head">
+							<span class="comment_author">TVS</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-448" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=448#commentform" onclick="return addComment.moveForm( &quot;comment-body-448&quot;, &quot;448&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to TVS"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/65ad7276119acff06748b0f4d064bff2" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-448"><p>Ravi – thanks for the great post.<br>
+I am unable to add a navigation item as detailed in the section “Add View Controller for entering task detail.”.  I tried with adding a navigation bar (instead of navigation item). When i do this, both the main navigation control and the navigation appear on the “Task Detail” screen (Looks like this issue is similar <a href="http://stackoverflow.com/questions/23548088/storyboard-navigation-controller-and-tab-bar-controller" rel="nofollow">http://stackoverflow.com/questions/23548088/storyboard-navigation-controller-and-tab-bar-controller</a>). Could you comment on how you made this work?</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-odd thread-alt depth-1" id="comment-450">
+						<div class="comment_head">
+							<span class="comment_author">TVS</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-450" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=450#commentform" onclick="return addComment.moveForm( &quot;comment-body-450&quot;, &quot;450&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to TVS"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/65ad7276119acff06748b0f4d064bff2" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-450"><p>Ravi – found what was causing the problem (w.r.t my previous comment). It worked when I changed the sequence of steps a bit.<br>
+1) After creating task detail view control, i added navigation item (it did not show in storyboard, but only on the explorer)<br>
+2) I created a segue from the table scene by ctrl+dragging from “+”<br>
+3) Once i did this, i was able to add item buttons</p>
+						</div>
+<ul class="children">
+					<li class="comment byuser comment-author-rshankar bypostauthor odd alt depth-2" id="comment-458">
+						<div class="comment_head">
+							<span class="comment_author">rshankar</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-458" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=458#commentform" onclick="return addComment.moveForm( &quot;comment-body-458&quot;, &quot;458&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to rshankar"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/19de570461532ae0f1b11359efd5403e" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-458"><p>Thanks for sharing the info</p>
+						</div>
+</li><!-- #comment-## -->
+</ul>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-544">
+						<div class="comment_head">
+							<span class="comment_author">Patrick</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-544" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=544#commentform" onclick="return addComment.moveForm( &quot;comment-body-544&quot;, &quot;544&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Patrick"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/510f40c500d0029603c15db342b5cac7" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-544"><p>I get an error if I run the app: fatal error: unexpectedly found nil while unwrapping an Optional value. It happends in this line of code in the AppDelegate.swift file:        return NSManagedObjectModel(contentsOfURL: modelURL!)<br>
+in this function:     lazy var managedObjectModel: NSManagedObjectModel = {<br>
+        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.<br>
+        let modelURL = NSBundle.mainBundle().URLForResource(“MyApp”, withExtension: “momd”)<br>
+        return NSManagedObjectModel(contentsOfURL: modelURL!)<br>
+        }()</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-720">
+						<div class="comment_head">
+							<span class="comment_author"><a href="http://markotadic.com/" rel="external nofollow" class="url">tadija</a></span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-720" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=720#commentform" onclick="return addComment.moveForm( &quot;comment-body-720&quot;, &quot;720&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to tadija"></a>
+							<span class="avatar"><a href="http://markotadic.com/" rel="nofollow"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/d5214ebfeafb46b96a6cc006ca5b5096" class="avatar avatar-88 photo" height="88" width="88"></a></span>
+						</div>
+						<div class="comment_text" id="comment-body-720"><p>I made this new Core Data wrapper for iOS in Swift – <a href="https://github.com/tadija/AERecord" rel="nofollow">https://github.com/tadija/AERecord</a></p>
+<p>You can use it to setup Core Data stack like this:</p>
+<p>    AERecord.setupCoreDataStack()</p>
+<p>Access context for current thread like this:</p>
+<p>    AERecord.defaultContext</p>
+<p>Save context like this:</p>
+<p>    AERecord.saveContext()</p>
+<p>Create fetch requests like this:</p>
+<p>    NSManagedObject.create()</p>
+<p>    NSManagedObject.firstOrCreateWithAttribute(“city”, value: “Belgrade”)</p>
+<p>    NSManagedObject.deleteAll()</p>
+<p>    let predicate = …<br>
+    NSManagedObject.firstWithPredicate(predicate)</p>
+<p>    NSManagedObject.allWithAttribute(“year”, value: 1984)</p>
+<p>And much more… I hope it will be useful for someone.</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-816">
+						<div class="comment_head">
+							<span class="comment_author">Mike Honcho</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-816" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=816#commentform" onclick="return addComment.moveForm( &quot;comment-body-816&quot;, &quot;816&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Mike Honcho"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/50810a38d352b6dc4bed97cbee119064" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-816"><p>I’m getting this weird error that reads use of unresolved identifier ‘presentItemInfo’ when I try and type up the viewController.swift file.  I added the import coreData atop the file so I’m unsure as to why this jobbie is not working?</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-881">
+						<div class="comment_head">
+							<span class="comment_author">Oliverchik</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-881" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=881#commentform" onclick="return addComment.moveForm( &quot;comment-body-881&quot;, &quot;881&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Oliverchik"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/3c39cbfa038561d985b3e158de55c85b" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-881"><p>Excellent tutorial! Congrats! I was able to fit that right in my code. Only part that’s missing is sections. I was planning to use sections in my TableView, so did overload the section header method:</p>
+<p>override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -&gt; String?<br>
+    {<br>
+        if let sections = fetchedResultController.sections as? [NSFetchedResultsSectionInfo] {<br>
+            return sections[section].name<br>
+        }<br>
+        return nil<br>
+    }</p>
+<p>But quite obviously the Core Data code in the tutorial is not set up to populate sections. Could you give me a pointer how to add that?</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-907">
+						<div class="comment_head">
+							<span class="comment_author">Ben</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-907" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=907#commentform" onclick="return addComment.moveForm( &quot;comment-body-907&quot;, &quot;907&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Ben"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/9caedc112944c66ed020f71e9b14b1e7" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-907"><p>Thanks for the post</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-908">
+						<div class="comment_head">
+							<span class="comment_author">Måns</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-908" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=908#commentform" onclick="return addComment.moveForm( &quot;comment-body-908&quot;, &quot;908&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Måns"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/47495d5d8087adc29e8f459cc66b94ff" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-908"><p>let task:Tasks = fetchedResultController.objectAtIndexPath(indexPath) as Tasks</p>
+<p>What am I supposed to write instead of Tasks? “undeclared type” it says.</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-950">
+						<div class="comment_head">
+							<span class="comment_author">cpmac</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-950" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=950#commentform" onclick="return addComment.moveForm( &quot;comment-body-950&quot;, &quot;950&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to cpmac"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/599c9605fcbc4ee92cac2e7858665336" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-950"><p>Hi<br>
+great tutorial.<br>
+I’m having a problem I think associated with tasks, like others.<br>
+in prepareforsegue function I get<br>
+UITableView numberOfRowsInSection does not have  member IndexForPathForCell<br>
+and<br>
+use of undeclared type TaskDetailViewController</p>
+<p>for the numberOfSectionsInTableView and the three other tableview override functions I get<br>
+Method does not override any method in its superclass.</p>
+<p>As I am comparing my typing with the source files as I go, I called my app TaskManager2 so for the module, I called it TaskManager2.Tasks,<br>
+The downloaded app works fine.</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1025">
+						<div class="comment_head">
+							<span class="comment_author">Mark Lindamood</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-1025" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=1025#commentform" onclick="return addComment.moveForm( &quot;comment-body-1025&quot;, &quot;1025&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Mark Lindamood"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/6d0ce7c577dd843fb0bb8a61d1f8bab8" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-1025"><p>I don’t understand what this sentence means:<br>
+“Navigate to TaskDetailViewController and variable which used to pass the task details across the ViewControllers”</p>
+<p>as applied to this line of code. When I adapt it to my project, Swift tells me it can’t infer the type for my ‘contact’ equivalent.<br>
+var task: Task? = nil</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment even thread-even depth-1" id="comment-1052">
+						<div class="comment_head">
+							<span class="comment_author">Pruthvi</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-1052" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=1052#commentform" onclick="return addComment.moveForm( &quot;comment-body-1052&quot;, &quot;1052&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Pruthvi"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/b0596dd6148d7a3de2b5a5b16c73850e" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-1052"><p>Thanks for the great tutorial!!!<br>
+Am facing one issue, I have done everything but am getting a warning like: Unable to load class name TaskManager.Tasks for entity ‘Tasks’.<br>
+Class not found, using default NSManagedObject instead.<br>
+And I have appended module name in with class name in data module Inspector.<br>
+Can you please help me to resolve this!!!!</p>
+						</div>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1139">
+						<div class="comment_head">
+							<span class="comment_author">Bryan</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-1139" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=1139#commentform" onclick="return addComment.moveForm( &quot;comment-body-1139&quot;, &quot;1139&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Bryan"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/dc64febadafc8144627a940da4d5e751" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-1139"><p>It is a very clear tutorial.</p>
+<p> Thanks for taking the time to show us all. But, when I download the code and ran on Xcode 6.3/Swift 1.2, the iOSimulator crashed immediately when I tried to enter a task description and press “Done”. It is giving me a error as below. I made change to all the “as” to “as!” in the code and also checked your TaskManager.xcdatamodelId and the Model Inspector show correctly with Name = Tasks, and Class = TaskManager.Tasks.  Have you tried your code for Xcode 6.3/Swift 1.2, or any plan to port it to 6.3. Thanks.</p>
+<p>:2015-04-12 23:49:46.066 TaskManager[10405:363514] CoreData: warning: Unable to load class named ‘TaskManager.Tasks’ for entity ‘Tasks’.  Class not found, using default NSManagedObject instead.<br>
+Could not cast value of type ‘NSManagedObject_Tasks_’ (0x7fd283585240) to ‘TaskManager.Tasks’ (0x1072a3b60).</p>
+						</div>
+<ul class="children">
+					<li class="comment byuser comment-author-rshankar bypostauthor even depth-2" id="comment-1140">
+						<div class="comment_head">
+							<span class="comment_author">rshankar</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-1140" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=1140#commentform" onclick="return addComment.moveForm( &quot;comment-body-1140&quot;, &quot;1140&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to rshankar"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/19de570461532ae0f1b11359efd5403e" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-1140"><p>Thanks for letting me know. Just ported the project to Swift 1.2. Let me know if you still face any issues</p>
+						</div>
+</li><!-- #comment-## -->
+</ul>
+</li><!-- #comment-## -->
+					<li class="comment odd alt thread-even depth-1" id="comment-1330">
+						<div class="comment_head">
+							<span class="comment_author">Louis L</span>
+							<a class="comment_permalink" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#comment-1330" title="permalink to this comment" rel="nofollow"></a>
+							<a class="comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/?replytocom=1330#commentform" onclick="return addComment.moveForm( &quot;comment-body-1330&quot;, &quot;1330&quot;, &quot;commentform&quot;, &quot;19732&quot; )" aria-label="Reply to Louis L"></a>
+							<span class="avatar"><img alt="" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/8ce43ab679a598fed99438bedffb4608" class="avatar avatar-88 photo" height="88" width="88"></span>
+						</div>
+						<div class="comment_text" id="comment-body-1330"><p>Hi,<br>
+thanks for this great tutorial.<br>
+Thank you for sharing your knowledge. It was very useful for me.</p>
+						</div>
+</li><!-- #comment-## -->
+				</ul>
+				<form id="commentform" method="post" action="http://rshankar.com/wp-comments-post.php">
+					<p class="comment_form_title">Leave a Comment</p>
+					<p id="comment_form_name">
+						<label for="author">Name <span class="required" title="Required">*</span></label>
+						<input type="text" id="author" class="input_text" name="author" value="" tabindex="1" aria-required="true">
+					</p>
+					<p id="comment_form_email">
+						<label for="email">Email <span class="required" title="Required">*</span></label>
+						<input type="text" id="email" class="input_text" name="email" value="" tabindex="2" aria-required="true">
+					</p>
+					<p id="comment_form_url">
+						<label for="url">Website</label>
+						<input type="text" id="url" class="input_text" name="url" value="" tabindex="3">
+					</p>
+					<p id="comment_form_comment">
+						<label for="comment">Comment</label>
+						<textarea name="comment" id="comment" class="input_text" tabindex="4" rows="6"></textarea>
+					</p>
+					<a rel="nofollow" id="cancel-comment-reply-link" href="http://rshankar.com/coredata-tutoiral-in-swift-using-nsfetchedresultcontroller/#respond" style="display:none;">Cancel</a>
+					<p id="comment_form_submit">
+						<input type="submit" id="submit" class="input_submit" name="submit" tabindex="5" value="Submit">
+					</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="57ebbfffda"></p><p style="display: none;"></p><input type="hidden" name="comment_post_ID" value="19732" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+				<input type="hidden" id="ak_js" name="ak_js" value="1436216667949"></form>
+			</section>
+			<div class="prev_next">
+				<div class="next_post"><a href="http://rshankar.com/how-to-rename-project-in-xcode/" rel="next">How to rename project in Xcode</a></div>
+				<div class="previous_post"><a href="http://rshankar.com/swift-webview-demo/" rel="prev">Swift – WebView demo</a></div>
+			</div>
+		</div>
+		<div class="sidebar">
+			<form class="thesis_email_form" method="post" action="http://rshankar.us2.list-manage.com/subscribe/post">
+				<input type="text" class="thesis_email_form_email input_text" name="MERGE0" value="">
+				<input type="submit" class="thesis_email_form_submit input_submit" name="submit" value="Get Updates!">
+				<input type="hidden" name="u" value="192abfd375ce3191db17befe1">
+				<input type="hidden" name="id" value="539a9fc78b">
+			</form>
+		<div class="widget widget_recent_entries" id="recent-posts-2">		<p class="widget_title">Recent Posts</p>		<ul>
+					<li>
+				<a href="http://rshankar.com/how-to-add-mapview-annotation-and-draw-polyline-in-swift/">Add annotations and Polyline to MapView in Swift</a>
+						</li>
+					<li>
+				<a href="http://rshankar.com/navigation-controller-in-ios/">Navigation Controller in iOS</a>
+						</li>
+					<li>
+				<a href="http://rshankar.com/storyboard-scene-and-segue/">Storyboard, Scene and Segue</a>
+						</li>
+					<li>
+				<a href="http://rshankar.com/swift-demo-add-progress-bar/">Swift Demo – Add Progress Bar</a>
+						</li>
+					<li>
+				<a href="http://rshankar.com/create-new-test-target-in-xcode/">Create new Test Target in Xcode</a>
+						</li>
+				</ul>
+		</div>
+<!-- Quick Adsense Wordpress Plugin: http://quicksense.net/ -->
+<div class="widget �lambda_3" id="adswidget3-quick-adsense">
+<script type="text/javascript">
+    google_ad_client = "ca-pub-5514861591674744";
+    google_ad_slot = "5972213675";
+    google_ad_width = 300;
+    google_ad_height = 250;
+</script>
+<!-- Below Post - New -->
+<script type="text/javascript" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/show_ads.js">
+</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div><div class="widget widget_recent_comments" id="recent-comments-2"><p class="widget_title">Recent Comments</p><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href="http://rshankar.com/how-to-add-annotation-to-mapview-in-ios/" rel="external nofollow" class="url">How to add annotation to MapView in iOS – Swift Tutorials</a></span> on <a href="http://rshankar.com/how-to-add-mapview-annotation-and-draw-polyline-in-swift/#comment-1536">Add annotations and Polyline to MapView in Swift</a></li><li class="recentcomments"><span class="comment-author-link">rshankar</span> on <a href="http://rshankar.com/insertion-sort-in-swift/#comment-1532">Insertion Sort</a></li><li class="recentcomments"><span class="comment-author-link">Laurent</span> on <a href="http://rshankar.com/insertion-sort-in-swift/#comment-1530">Insertion Sort</a></li><li class="recentcomments"><span class="comment-author-link">Garrett M</span> on <a href="http://rshankar.com/implementing-stripe-integration-in-swift/#comment-1525">Integrating Stripe in Swift for iOS development</a></li><li class="recentcomments"><span class="comment-author-link">rshankar</span> on <a href="http://rshankar.com/blogreader-app-in-swift/#comment-1515">BlogReader App in Swift</a></li></ul></div><div class="widget widget_archive" id="archives-2"><p class="widget_title">Archives</p>		<ul>
+	<li><a href="http://rshankar.com/2015/07/">July 2015</a></li>
+	<li><a href="http://rshankar.com/2015/06/">June 2015</a></li>
+	<li><a href="http://rshankar.com/2015/05/">May 2015</a></li>
+	<li><a href="http://rshankar.com/2015/04/">April 2015</a></li>
+	<li><a href="http://rshankar.com/2015/03/">March 2015</a></li>
+	<li><a href="http://rshankar.com/2015/02/">February 2015</a></li>
+	<li><a href="http://rshankar.com/2015/01/">January 2015</a></li>
+	<li><a href="http://rshankar.com/2014/11/">November 2014</a></li>
+	<li><a href="http://rshankar.com/2014/09/">September 2014</a></li>
+	<li><a href="http://rshankar.com/2014/08/">August 2014</a></li>
+	<li><a href="http://rshankar.com/2014/07/">July 2014</a></li>
+	<li><a href="http://rshankar.com/2014/06/">June 2014</a></li>
+	<li><a href="http://rshankar.com/2014/04/">April 2014</a></li>
+	<li><a href="http://rshankar.com/2014/03/">March 2014</a></li>
+	<li><a href="http://rshankar.com/2014/02/">February 2014</a></li>
+	<li><a href="http://rshankar.com/2014/01/">January 2014</a></li>
+	<li><a href="http://rshankar.com/2013/08/">August 2013</a></li>
+	<li><a href="http://rshankar.com/2013/06/">June 2013</a></li>
+	<li><a href="http://rshankar.com/2013/03/">March 2013</a></li>
+	<li><a href="http://rshankar.com/2013/02/">February 2013</a></li>
+	<li><a href="http://rshankar.com/2013/01/">January 2013</a></li>
+	<li><a href="http://rshankar.com/2012/06/">June 2012</a></li>
+	<li><a href="http://rshankar.com/2012/03/">March 2012</a></li>
+	<li><a href="http://rshankar.com/2012/02/">February 2012</a></li>
+	<li><a href="http://rshankar.com/2012/01/">January 2012</a></li>
+	<li><a href="http://rshankar.com/2011/06/">June 2011</a></li>
+		</ul>
+</div><div class="widget widget_pages" id="pages-2"><p class="widget_title">Pages</p>		<ul>
+			<li class="page_item page-item-42"><a href="http://rshankar.com/about/">About</a></li>
+<li class="page_item page-item-37 page_item_has_children"><a href="http://rshankar.com/apps-2/">Apps</a>
+<ul class="children">
+	<li class="page_item page-item-15"><a href="http://rshankar.com/apps-2/chennai-suburban/">Chennai Suburban</a></li>
+</ul>
+</li>
+<li class="page_item page-item-19625"><a href="http://rshankar.com/privacy-policy/">Privacy Policy</a></li>
+<li class="page_item page-item-8"><a href="http://rshankar.com/ios-training/">Swift Training</a></li>
+		</ul>
+		</div>		</div>
+	</div>
+	<div id="footer">
+		<p class="attribution">This site rocks the <a href="http://pearsonified.com/">Pearsonified</a> Skin for <a href="http://diythemes.com/">Thesis</a>.</p>
+		<p><a href="http://rshankar.com/wp-admin/"><abbr title="WordPress">WP</abbr> Admin</a></p>
+	</div>
+</div>
+<!-- Popups v1.3.1 - http://wordpress.org/plugins/social-popup/--><style type="text/css">
+	#spu-20044 {
+		background: #eeeeee;
+		color: #333;		border: 8px solid #555;		width: 600px;
+
+	}
+	#spu-bg-20044 {
+		opacity: 0.5;
+	}
+</style>
+<div class="spu-bg" id="spu-bg-20044"></div>
+<div class="spu-box  spu-centered spu-total- " id="spu-20044" data-box-id="20044" data-trigger="seconds" data-trigger-number="5" data-spuanimation="fade" data-cookie="99" data-test-mode="0" data-auto-hide="0" data-close-on-conversion="1" data-bgopa="0.5" data-total="" style="display: none;" data-width="600">
+	<div class="spu-content"><h1 style="text-align: center; margin-top: 0px; padding-top: 0px;">Swift 1-1 Training!</h1>
+<p style="text-align: center;">Swift Beginners (6 hrs)</p>
+<p style="text-align: center;">iOS Development in Swift (20 hrs)</p>
+<p style="text-align: center; margin-bottom: 0px; padding-bottom: 0px;"><a href="http://rshankar.com/ios-training/">Click here for training details</a></p>
+</div>
+	<span class="spu-close spu-close-popup"><i class="spu-icon spu-icon-close"></i></span>
+	<span class="spu-timer"></span>
+			<p class="spu-powered">Powered by <a href="http://wp.timersys.com/popups/" target="_blank">WordPress Popup</a></p>
+	</div>
+<!-- / Popups Box -->
+<div id="fb-root" class=" fb_reset"></div><script type="text/javascript" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/form.js"></script>
+<script type="text/javascript" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/comment-reply.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var spuvar = {"is_admin":"","disable_style":"","safe_mode":"","ajax_mode":"","ajax_url":"http:\/\/rshankar.com\/wp-admin\/admin-ajax.php","ajax_mode_url":"http:\/\/rshankar.com\/?spu_action=spu_load&lang=","pid":"19732","is_front_page":"","is_category":"","is_archive":"","seconds_confirmation_close":"5"};
+var spuvar_social = [""];
+/* ]]> */
+</script>
+<script type="text/javascript" src="./CoreData tutoiral in Swift using NSFetchedResultsController – Learn Swift_files/public-min.js"></script>
+<script type="text/javascript">
+(function(){
+	var classes = document.getElementsByClassName('menu_control');
+	for (i = 0; i < classes.length; i++) {
+		classes[i].onclick = function() {
+			var menu = this.nextElementSibling;
+			if (/show_menu/.test(menu.className))
+				menu.className = menu.className.replace('show_menu', '').trim();
+			else
+				menu.className += ' show_menu';
+		};
+	}
+})();
+</script>
+<noscript>&lt;style type="text/css" scoped&gt;.nav { display: block; }&lt;/style&gt;</noscript>
+
+
+
+<!-- Dynamic page generated in 0.538 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-07-06 20:43:23 -->
+
+<!-- super cache --></body></html>
